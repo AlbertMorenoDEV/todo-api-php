@@ -1,6 +1,15 @@
 {
+    "brick/math": {
+        "version": "0.9.3"
+    },
     "doctrine/instantiator": {
         "version": "1.4.0"
+    },
+    "hamcrest/hamcrest-php": {
+        "version": "v2.0.1"
+    },
+    "mockery/mockery": {
+        "version": "1.4.4"
     },
     "myclabs/deep-copy": {
         "version": "1.10.2"
@@ -66,6 +75,12 @@
     },
     "psr/log": {
         "version": "3.0.0"
+    },
+    "ramsey/collection": {
+        "version": "1.2.2"
+    },
+    "ramsey/uuid": {
+        "version": "4.2.3"
     },
     "sebastian/cli-parser": {
         "version": "1.0.1"
