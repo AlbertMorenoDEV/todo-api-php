@@ -1,0 +1,6 @@
+services:
+    App\Module\Todo\Application\Create\CreateTodoCommandHandler:
+        tags: [ { name: messenger.message_handler, bus: command.bus } ]
+        autoconfigure: false
+        arguments:
+          - '@App\Module\Todo\Infrastructure\Persistence\MysqlTodoRepository'

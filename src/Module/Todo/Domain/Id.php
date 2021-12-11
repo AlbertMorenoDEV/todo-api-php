@@ -28,6 +28,11 @@ final class Id
         return $this->value === $other->value();
     }
 
+    public function __toString(): string
+    {
+        return $this->value;
+    }
+
     private function guard(string $value): void
     {
         if (empty($value)) {

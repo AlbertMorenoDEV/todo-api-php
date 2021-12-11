@@ -4,7 +4,9 @@ declare(strict_types = 1);
 
 namespace App\Module\Todo\Application\Create;
 
-final class CreateTodoCommand
+use App\Shared\Application\Command;
+
+final class CreateTodoCommand implements Command
 {
     public function __construct(private string $id, private string $title, private int $dueTime)
     {

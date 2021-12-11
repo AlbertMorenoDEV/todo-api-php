@@ -9,14 +9,16 @@ use App\Module\Todo\Domain\Id;
 use App\Module\Todo\Domain\Title;
 use App\Module\Todo\Domain\Todo;
 use App\Module\Todo\Domain\TodoRepository;
+use App\Shared\Application\Command;
+use App\Shared\Application\CommandHandler;
 
-final class CreateTodoCommandHandler
+final class CreateTodoCommandHandler implements CommandHandler
 {
     public function __construct(private TodoRepository $todoRepository)
     {
     }
 
-    public function handle(CreateTodoCommand $command): void
+    public function __invoke(CreateTodoCommand|Command $command): void
     {
         $newTodo = Todo::create(
             Id::fromString($command->id()),

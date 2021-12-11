@@ -32,6 +32,6 @@ final class CreateTodoCommandHandlerTest extends ApplicationTestCase
 
         $this->shouldSaveTodo($expectedTodo);
 
-        $handler->handle($command);
+        $handler($command);
     }
 }

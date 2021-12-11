@@ -1,0 +1,5 @@
+imports:
+    - { resource: "application.yaml" }
+    - { resource: "infrastructure.yaml" }
+    - { resource: "ui.yaml" }
+    - { resource: "doctrine.yaml" }

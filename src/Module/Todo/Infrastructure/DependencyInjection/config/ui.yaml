@@ -1,0 +1,4 @@
+services:
+    App\Module\Todo\UI\PostTodoController:
+        public: true
+        autowire: true

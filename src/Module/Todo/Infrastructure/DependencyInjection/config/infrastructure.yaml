@@ -1,0 +1,4 @@
+services:
+    App\Module\Todo\Infrastructure\Persistence\MysqlTodoRepository:
+        arguments:
+            $entityManager: '@doctrine.orm.entity_manager'

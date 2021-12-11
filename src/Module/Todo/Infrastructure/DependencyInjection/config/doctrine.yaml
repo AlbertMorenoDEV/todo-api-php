@@ -1,0 +1,14 @@
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    Todo:
+                        type: xml
+                        dir: '%kernel.project_dir%/src/Module/Todo/Infrastructure/Persistence/Doctrine/config'
+                        prefix: App\Module\Todo\Domain
+                        is_bundle: false
+    dbal:
+        types:
+            todo_id: App\Module\Todo\Infrastructure\Persistence\Doctrine\TodoIdType
+            due_time: App\Module\Todo\Infrastructure\Persistence\Doctrine\DueTimeType
