@@ -103,6 +103,9 @@
     "hamcrest/hamcrest-php": {
         "version": "v2.0.1"
     },
+    "justinrainbow/json-schema": {
+        "version": "5.2.11"
+    },
     "laminas/laminas-code": {
         "version": "4.5.0"
     },
