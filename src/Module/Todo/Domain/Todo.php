@@ -29,4 +29,9 @@ final class Todo
     {
         return $this->dueTime;
     }
+
+    public function markAsDone(CheckTime $checkTime): void
+    {
+
+    }
 }

@@ -1,7 +1,8 @@
 # todo-api-php
 
 ## Todo List
-- [ ] Create todos from an HTTP call
+- [x] Create todos from an HTTP call
+- [ ] Mark todo as done
 - [ ] Send and email when a todo item has been marked as done (use `symfony/mailer` and MailCatcher)
 - [ ] Create todos in async
 - [ ] Check list for each todo
