@@ -4,6 +4,9 @@ declare(strict_types = 1);
 
 namespace App\Module\Todo\Domain;
 
+use DateTimeImmutable;
+use DateTimeInterface;
+
 final class CheckTime
 {
     private function __construct(private int $value)
@@ -31,5 +34,10 @@ final class CheckTime
         if (0 === $value) {
             throw InvalidCheckTime::invalid($value);
         }
+    }
+
+    public function dateTime(): DateTimeInterface
+    {
+        return DateTimeImmutable::createFromFormat('U', (string) $this->value);
     }
 }

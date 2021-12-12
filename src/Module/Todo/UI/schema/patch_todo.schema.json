@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Modify todo request",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Todo Id"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["todo"]
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "$id": "#root/title",
+              "title": "title",
+              "type": "string"
+            },
+            "due_time": {
+              "$id": "#root/due_time",
+              "title": "due time",
+              "type": "integer"
+            },
+            "done": {
+              "$id": "#root/done",
+              "title": "done",
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "attributes"
+      ]
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

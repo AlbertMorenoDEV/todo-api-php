@@ -2,3 +2,7 @@ services:
     App\Module\Todo\UI\PostTodoController:
         public: true
         autowire: true
+        
+    App\Module\Todo\UI\PatchTodoController:
+        public: true
+        autowire: true

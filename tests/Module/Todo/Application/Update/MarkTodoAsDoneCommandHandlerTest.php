@@ -13,11 +13,13 @@ use App\Tests\Module\Todo\Domain\DueTimeStub;
 use App\Tests\Module\Todo\Domain\IdStub;
 use App\Tests\Module\Todo\Domain\TitleStub;
 use App\Tests\Module\Todo\Domain\TodoStub;
+use App\Tests\Module\Todo\Infrastructure\TimeProviderMockTrait;
 use App\Tests\Module\Todo\Infrastructure\TodoRepositoryMockTrait;
 
 final class MarkTodoAsDoneCommandHandlerTest extends ApplicationTestCase
 {
     use TodoRepositoryMockTrait;
+    use TimeProviderMockTrait;
 
     /**
      * @test
@@ -28,11 +30,12 @@ final class MarkTodoAsDoneCommandHandlerTest extends ApplicationTestCase
         $title        = TitleStub::random();
         $dueTime      = DueTimeStub::future();
         $checkTime    = CheckTimeStub::now();
-        $command      = new MarkTodoAsDoneCommand($id->value(), $checkTime->value());
-        $handler      = new MarkTodoAsDoneCommandHandler($this->todoRepositoryMock());
+        $command      = new MarkTodoAsDoneCommand($id->value());
+        $handler      = new MarkTodoAsDoneCommandHandler($this->todoRepositoryMock(), $this->timeProviderMock());
         $initialTodo  = Todo::create($id, $title, $dueTime);
         $expectedTodo = TodoStub::newDone($id, $title, $dueTime, $checkTime);
 
+        $this->shouldGetNow($checkTime->dateTime());
         $this->shouldFindTodo($id, $initialTodo);
         $this->shouldSaveTodo($expectedTodo);
 

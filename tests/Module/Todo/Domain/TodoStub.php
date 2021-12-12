@@ -19,4 +19,9 @@ final class TodoStub
 
         return $newTodo;
     }
+
+    public static function randomPendingWithId(Id $id): Todo
+    {
+        return Todo::create($id, TitleStub::random(), DueTimeStub::future());
+    }
 }

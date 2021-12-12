@@ -7,8 +7,8 @@ parameters:
 
 services:
     _defaults:
-        autowire: true
-        autoconfigure: true
+        autowire: false
+        autoconfigure: false
 
     _instanceof:
         App\Shared\Application\CommandHandler:
